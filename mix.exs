@@ -15,21 +15,22 @@
 ## Copyright (c) 2017 Daniil Fedotov.  All rights reserved.
 ##
 
-
 defmodule MixTaskArchiveDeps.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :mix_task_archive_deps,
-     version: "0.4.0",
-     elixir: "~> 1.4",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     description: "Mix task to create archives for a project dependencies and elixir itself",
-     package: package(),
-     deps: deps(),
-     name: "MixTaskArchiveDeps",
-     source_url: "https://github.com/hairyhum/mix_task_archive_deps"]
+    [
+      app: :mix_task_archive_deps,
+      version: "0.4.0",
+      elixir: "~> 1.4",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      description: "Mix task to create archives for a project dependencies and elixir itself",
+      package: package(),
+      deps: deps(),
+      name: "MixTaskArchiveDeps",
+      source_url: "https://github.com/hairyhum/mix_task_archive_deps"
+    ]
   end
 
   # Configuration for the OTP application
@@ -52,11 +53,14 @@ defmodule MixTaskArchiveDeps.Mixfile do
   defp deps do
     [{:ex_doc, "~> 0.14", only: :dev}]
   end
+
   defp package() do
-    [name: :mix_task_archive_deps,
-     files: ["lib", "mix.exs", "README*", "LICENSE*"],
-     maintainers: ["Daniil Fedotov"],
-     licenses: ["MPL 1.1"],
-     links: %{"GitHub" => "https://github.com/hairyhum/mix_task_archive_deps"}]
+    [
+      name: :mix_task_archive_deps,
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Daniil Fedotov"],
+      licenses: ["MPL 1.1"],
+      links: %{"GitHub" => "https://github.com/hairyhum/mix_task_archive_deps"}
+    ]
   end
 end
