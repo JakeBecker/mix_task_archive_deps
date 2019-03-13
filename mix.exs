@@ -22,7 +22,7 @@ defmodule MixTaskArchiveDeps.Mixfile do
   def project do
     [app: :mix_task_archive_deps,
      version: "0.4.0",
-     elixir: "~> 1.4",
+     elixir: "~> 1.7",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: "Mix task to create archives for a project dependencies and elixir itself",
